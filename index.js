@@ -17,8 +17,8 @@ app.post("/get-quote", async (req,res) => {
         const result = await axios.get("https://aot-api.vercel.app/quote");
         res.render("index.ejs", 
         {
-            quote: result.data.quote.quote,
-            author: result.data.quote.character,
+            quote: result.data.quote,
+            author: result.data.author,
         });
 } catch (error) {
     res.render("index", {
